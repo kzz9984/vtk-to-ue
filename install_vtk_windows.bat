@@ -33,6 +33,11 @@ REM build
 echo "Doing a %VTK_BUILD_CONFIG% Build."
 
 cd    Build
+
+REM set PATH = "C:\Us";%PATH%
+REM echo %PATH%
+
+set CMAKE_ROOT=C:\Program Files\CMake
 cmake .. -G "Visual Studio 16 2019" -A x64 -DVTK_GROUP_ENABLE_Rendering=DONT_WANT
 cmake --build   . --config %VTK_BUILD_CONFIG% --parallel 20
 cmake --install . --config %VTK_BUILD_CONFIG% --prefix %VTKLIB_DIR%\%VTK_BUILD_CONFIG%
